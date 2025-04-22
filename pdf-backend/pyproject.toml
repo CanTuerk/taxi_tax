@@ -1,0 +1,27 @@
+[project]
+name = "pdf-backend"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Can Zafer Tuerk",email = "can-zafer.tuerk@adesso.de"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi (>=0.115.12,<0.116.0)",
+    "uvicorn[standard] (>=0.34.2,<0.35.0)",
+    "python-multipart (>=0.0.20,<0.0.21)",
+    "pdfminer-six (>=20250416,<20250417)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "pdf-backend"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+package-mode = false
