@@ -27,3 +27,25 @@ poetry run uvicorn app.main:app --reload
 # TODO
 
 - Schauen mit welchen Tools ich am besten web_scraping betreiben kann.
+
+# Login
+
+## Starkcenter
+
+- MicoTaxi : Ali2736?
+
+## Sumup
+
+- hasanggul8@gmail.com : Mustafa2017?
+
+## FreeNow
+
+- hasanggul8@gmail.com : Mustafa2017?
+
+## Bolt
+
+- hasanggul8@gmail.com : Mustafa2017€
+
+## Uber
+
+- hasanggul8@gmail.com : Mustafa2017?

@@ -2,6 +2,7 @@ from io import BytesIO
 from pdfminer.high_level import extract_text
 import re
 
+
 def extract_entities(pdf_bytes: bytes) -> dict:
     pdf_stream = BytesIO(pdf_bytes)
     text = extract_text(pdf_stream)
@@ -9,12 +10,16 @@ def extract_entities(pdf_bytes: bytes) -> dict:
     entities = {}
 
     # 1. Extract Name (appears after "Herr")
-    name_match = re.search(r"Herr\s+([A-Z][a-zA-ZäöüÄÖÜß]+\s+[A-Z][a-zA-ZäöüÄÖÜß]+)", text)
+    name_match = re.search(
+        r"Herr\s+([A-Z][a-zA-ZäöüÄÖÜß]+\s+[A-Z][a-zA-ZäöüÄÖÜß]+)", text
+    )
     if name_match:
         entities["name"] = name_match.group(1)
 
     # 2. Extract Bestellungsnummer (following "Bestell-Nummer" in tabular section)
-    bestel_match = re.search(r"Bestell-Nummer\s+Artikel-\s+Nummer\s+Menge.*?\n\d+\s+(\d{6})", text, re.DOTALL)
+    bestel_match = re.search(
+        r"Bestell-Nummer\s+Artikel-\s+Nummer\s+Menge.*?\n\d+\s+(\d{6})", text, re.DOTALL
+    )
     if bestel_match:
         entities["bestellnummer"] = bestel_match.group(1)
 
