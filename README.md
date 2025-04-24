@@ -5,9 +5,8 @@
 - pipx
 - poetry
 
-```
+```bash
 poetry run uvicorn app.main:app --reload
-
 ```
 
 # Fragen
